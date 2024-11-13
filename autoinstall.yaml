@@ -1,30 +1,28 @@
-# Required configuration
 autoinstall:
   version: 1 # Defines the version of the autoinstall configuration, and is required for futureproofing; Currently, this must be set to "1".
-  # Optional configuration
   interactive-sections: # A list of configuration steps to still show during installation
     - identity
     - network
   storage:
     # WARNING: THIS ERASES THE ENTIRE DISK!
     layout:
-      name: lvm # DEFAULT
-      sizing-policy: all # Use the whole disk
+      name: lvm
+      sizing-policy: all
       match:
-        size: largest # Can be either largest or smallest
-  keyboard: # Sets the keyboard layout (DEFAULT)
-    layout: "us" # For example, US English (DEFAULT)
-    variant: "" # Sets the variant of the specified layout (if applicable) (DEFAULT)
-  locale: "en_US.UTF-8" # Sets the locale for the installed system. For example, US English with UTF-8 character encoding (DEFAULT).
+        size: largest
+  keyboard:
+    layout: "us"
+    variant: ""
+  locale: "en_US.UTF-8"
   source: # Specifies the variant of Ubuntu to be installed
-    id: ubuntu-server # For example, the "Extended" installaion of Ubuntu Desktop; NOTE: THIS IS ONLY VALID ON THE UBUNTU DESKTOP ISO! Check the autoinstall configuration reference manual for valid values on other versions of Ubuntu.
-  ssh: # DEFAULT
-    install-server: true # Choose whether or not to install openssh-server (can be either true or false) (DEFAULT)
-    allow-pw: true # Choose whether or not to allow password authentication over SSH (can be either true or false) (DEFAULT)
+    id: ubuntu-server
+  ssh:
+    install-server: true
+    allow-pw: true
   drivers: # Choose whether to install third-party drivers
-    install: true # Can be either true or false
+    install: true
   packages: # Provide a list of packages to install on the installed system; Default is none
     - zip
     - unzip
   updates: all # Controls the type of updates that will be downloaded and installed after system installation; Can be either "security" (for security updates only) or "all" (for all updates, like in this example).
-  shutdown: reboot # Controls whether to reboot or poweroff the system after installation (DEFAULT)
+  shutdown: reboot # Controls whether to reboot or poweroff the system after installation
