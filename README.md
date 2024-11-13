@@ -7,12 +7,12 @@ This project was created to provide tooling to create a custom Ubuntu Server ima
 3. Create the `source-files` directory
 4. Install needed utilities using : `sudo apt install p7zip xorriso`
 5. Extract the ISO files using : `7z -y x [ISO NAME] -osource-files`
-6. Move the `[BOOT]` directory in the source-files to the parent directory and rename to `BOOT`
-7. Copy the `autoinstall.yaml` file to source-files directory
+6. Move the `[BOOT]` directory in `source-files` to the parent directory and rename to `BOOT`
+7. Copy the `autoinstall.yaml` file to `source-files` directory
 8. Run `xorriso -indev [ISO NAME] -report_el_torito as_mkisofs` to get ISO meta-data
 9. Update the `make-iso.sh` with any updated meta-data and ensure that the `grub2-mbr` and `-append_partition` switches point to the images in the `BOOT` directory
-10. Run the `make-iso.sh` to create the new ISO
-11. Test the ISO in your preferred VM Manager
+10. Run the `make-iso.sh` to create the new custom ISO
+11. Test the custom ISO in your preferred VM Manager
 
 ### Reference Material
 - [Autoinstall Configuration Reference Manual](https://canonical-subiquity.readthedocs-hosted.com/en/latest/reference/autoinstall-reference.html)
